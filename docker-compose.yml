@@ -1,0 +1,15 @@
+version: '3.3'
+
+services:
+  mongodb:
+    image: mongo:5.0
+    ports:
+      - 27017:27017
+    volumes:
+      - freshquet_db:/data/db
+    environment:
+      - MONGODB_INITDB_ROOT_USERNAME=freshquet_user
+      - MONGODB_INITDB_ROOT_PASSWORD=freshquet_pass
+
+volumes:
+  freshquet_db:
